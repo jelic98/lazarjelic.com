@@ -1,0 +1,132 @@
+:root {
+	--color-text: #303952;
+	--color-button: #b53471;
+	--color-button-hover: #6F1E51;
+	--color-button-content: #ffffff;
+	--color-card: #ffffff;
+	--color-gradient-start: #54a0ff;
+	--color-gradient-end: #81ecec;
+	--color-selection-background: #b53471;
+	--color-selection-color: #ffffff;
+}
+
+::selection {
+  color: var(--color-selection-color);
+  background: var(--color-selection-background);
+}
+
+::-moz-selection {
+  color: var(--color-selection-color);
+  background: var(--color-selection-background);
+}
+
+body {
+	position: relative;
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	font-size: 1em;
+  	font-weight: 200;
+  	line-height: 1.5em;
+  	letter-spacing: 0.1em;
+  	color: var(--color-text);
+	background: linear-gradient(45deg, var(--color-gradient-start), var(--color-gradient-end));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.card {
+  	display: inline-block;
+	position: absolute;
+	width: 50%;
+  	transform: translate(50%, 25%);
+  	text-align: justify;
+	background: var(--color-card);
+ 	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+  	transition: box-shadow 250ms ease-in-out;
+}
+
+.card:hover {
+  	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.hero {
+  	height: 10%;
+  	opacity: 0.9;
+  	overflow: hidden;
+  	transition: opacity 250ms ease-in-out;
+}
+
+.hero:hover,
+.card:hover .hero {
+  	opacity: 1;
+}
+
+.text {
+	min-height: 10%;
+	padding: 1em;
+}
+
+.buttons {
+	position: absolute;
+	margin-top: -3em;
+	right: 0.5em;
+}
+
+.button {
+	display: inline-block;
+	position: relative;
+  	width: 1.5em;
+  	height: 1.5em;
+	margin: 0 0.25em;
+	padding: 0.25em;
+  	border-radius: 50%;
+  	text-align: center;
+  	font-size: 1.5em;
+  	cursor: pointer;
+  	color: var(--color-button-content);
+  	background: var(--color-button);
+ 	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+	-webkit-transition: background 500ms linear;
+    -moz-transition: background 500ms linear;
+    -o-transition: background 500ms linear;
+    -ms-transition: background 500ms linear;
+    transition: background 500ms linear;
+}
+
+.button:hover {
+  	background: var(--color-button-hover);
+}
+
+.button i {
+	padding-top: 0.25em;
+	padding-left: 0.07em;
+}
+
+p a:link,
+p a:visited,
+p a:hover,
+p a:active {
+	color: var(--color-text);
+	text-decoration: none;
+	font-style: italic;
+}
+
+.bye {
+	text-align: right;
+	font-style: italic;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+
+	.card {
+		width: 100%;
+		transform: translate(0, 10%);
+	}
+}
