@@ -1,0 +1,23 @@
+# BEGIN - Default PHP configuration
+DirectoryIndex index.php
+Options -Indexes
+RewriteEngine on
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+# END - Default PHP configuration
+
+# BEGIN - Disable image download
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?lazarjelic.com [NC] 
+RewriteRule \.(gif|jpg|png)$ - [F]
+# END - Disable image download
+
+# BEGIN - Disable caching
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</IfModule>
+# END - Disable caching
