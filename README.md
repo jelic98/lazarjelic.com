@@ -1,3 +1,3 @@
 # lazarjelic.com
 
-Minimal personal website. Constantly updating.
+Minimal personal website.
